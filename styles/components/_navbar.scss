@@ -1,0 +1,122 @@
+@use '../mixins' as *;
+
+
+
+
+.root-navbar{ 
+
+  .topbar {
+    @include size(100%, $navbar-desktop-height);
+    @include container(true, false);
+    position: fixed;
+    top: 40px;
+    display: grid;
+    grid-template-columns: auto 1fr 57.6%;
+    align-items: center;
+    z-index: 100;
+    gap: 16px;
+
+    @include media-tablet{
+      grid-template-columns: auto 1fr 450px;
+      top: 0px;
+    }
+
+    @include media-mobile{
+      grid-template-columns: auto auto;
+      justify-content: space-between;
+      @include container(true, true);
+    }
+  }
+
+  .btn-menu{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: none;
+    @include media-mobile{
+      display: unset;
+    }
+  }
+
+  .detail{
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    transform: translateX(3.125vw);
+    z-index: 1;    
+    @include media-tablet{
+      border-top: none;
+    }
+    @include media-mobile{
+      display: none;
+    }
+  }
+    
+  .topbar-links{
+    padding: 0px;
+    margin: 0px;
+    @include container(false, true);
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    list-style-type: none;  
+    gap: 50px;
+    justify-content: end;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    background-color: rgba(255, 255, 255, 0.04);
+    height: 100%;
+
+    @include media-tablet{
+      gap: 38px;
+    }
+
+    @include media-mobile{
+      display: none;
+    }
+   
+    .number{
+      @include media-tablet{
+        display: none;
+      }
+    }
+
+    li{
+      display: inline-block;
+      position: relative;
+      height: $navbar-desktop-height;
+      @include flex-center;
+      @include typo-navlinks;
+    }    
+
+    @mixin navlink-decoration{
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      left: 0%;      
+      width: 100%;
+    }
+
+    li.active::after{
+      @include navlink-decoration();
+      border-top: 3px solid white;
+    }
+
+    li:not(.active):hover::after{
+      @include navlink-decoration();
+      border-top: 3px solid white;
+      transition: all 0.25s;
+    }
+    
+    li:not(.active)::after{
+      @include navlink-decoration();
+      border-top: 3px solid white;
+      width: 0%;
+      left: 50%;
+      transition: all 0s;
+    }
+  }
+    
+
+  .sidebar {
+    display: none;
+  }
+}

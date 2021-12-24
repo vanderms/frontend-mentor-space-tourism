@@ -1,0 +1,146 @@
+@use '../mixins' as *;
+
+
+.root-homepage {
+  @include size(100%, 100vh);
+  @include container;
+  @include content-min-height;
+  position: relative;
+  padding-top: calc(40px + #{$navbar-desktop-height});
+  display: grid;
+  grid-template-columns: percentage(665/1220) percentage(555 / 1220);
+
+  @include media-tablet{
+    grid-template-columns: 1fr;
+    gap: 165px;
+    align-content: center;
+    padding-top: $navbar-desktop-height;
+  }
+
+  > * {
+    z-index: 1;
+    position: relative;
+  }
+
+  .bg-image {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+
+    &.desktop{
+      @include media-tablet{
+        display: none;
+      }
+    }
+
+    &.tablet{
+      display: none;
+      @include media-only-tablet{
+        display: unset;
+      }
+    }
+
+    &.mobile{
+      display: none;
+      @include media-mobile{
+        display: unset;
+      }
+    }
+  }
+
+  .text-container{
+    &::after, &::before {
+      content: '';
+    }
+    display: grid;
+    grid-template-rows: 64fr 370px 36fr;
+    justify-content: center;
+
+    @include media-tablet{
+      &::after, &::before {
+        content: none;
+      }
+      grid-template-rows: 323px;
+    }
+  }
+
+  .text-container .text {
+    @include size(445px, 370px);
+
+    @include media-tablet{
+      @include size(447px, 323px);
+    }
+
+    .subtitle{
+      @include typo-sub-heading-1;
+      margin: 0px      
+    }
+
+    .title{
+      @include typo-heading-1;
+      margin: 54px 0px 0px 0px;
+    }
+
+    .paragraph{
+      @include typo-paragraph-1;
+      margin: 0px;
+    }    
+
+    @include media-tablet{
+      .subtitle,
+      .title,
+      .paragraph {
+        width: 100%;
+        text-align: center;
+      }
+
+      .title{
+        margin-bottom: -30px;
+      }
+    }
+  }
+
+  .decoration{
+    &::after, &::before{
+      content: '';
+    }
+    display: grid;
+    grid-template-rows: 73fr 274px 27fr;
+    justify-content: end;
+
+    @include media-tablet{
+      &::after, &::before{
+        content: none;
+      }
+      grid-template-rows: 242px;
+      justify-content: center;
+    }
+  }
+
+  .decoration .explore{
+    @include size(274px, 274px);
+    @include flex-center;
+    border-radius: 999px;
+    background-color: white;
+    font-family: $belefair;
+    font-weight: 400;
+    font-size: 32px;
+
+    @include media-tablet{
+      @include size(242px, 242px);
+    }
+   
+   
+    color: $dark-blue;
+  }
+
+
+
+
+}
