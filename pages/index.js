@@ -1,5 +1,6 @@
 import path from '../lib/path'
 import Link from 'next/link';
+import BgImage from '../components/bg-image/bg-image';
 
 export default function Home() {
   
@@ -11,10 +12,12 @@ export default function Home() {
     <>
      <section className='root-homepage'>
         
-        <div style={desktopBg} className='bg-image desktop'></div>
-        <div style={tabletBg} className='bg-image tablet'></div>
-        <div style={mobileBg} className='bg-image mobile'></div>
-        
+        <BgImage
+          desktop= '/home/background-home-desktop.jpg'
+          tablet = '/home/background-home-tablet.jpg'
+          mobile = '/home/background-home-mobile.jpg'
+        />
+
         <div className="text-container">        
           <div className="text">
             <header>
@@ -28,7 +31,7 @@ export default function Home() {
         </div>
         
         <div className="decoration">
-          <Link href='/destination'><a>
+          <Link href='/destination/moon'><a>
           <div className="explore"><span>EXPLORE</span></div>
           </a></Link>         
         </div>      

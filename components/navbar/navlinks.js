@@ -12,7 +12,7 @@ export default function NavLinks({className}){
         <Link href='/'><a><span className="number">00 </span>HOME</a></Link>
       </li>
       <li className={router.pathname === '/destination' ? 'active' : null}>
-        <Link href='/destination'><a><span className="number">01 </span>DESTINATION</a></Link>
+        <Link href='/destination/moon'><a><span className="number">01 </span>DESTINATION</a></Link>
       </li>
       <li className={router.pathname === '/crew' ? 'active' : null}>
         <Link href='/crew'><a><span className="number">02 </span>CREW</a></Link>

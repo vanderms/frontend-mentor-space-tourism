@@ -69,3 +69,25 @@ $belefair: 'Bellefair', serif;
     letter-spacing: 2.7px;    
   }
 }
+
+@mixin typo-heading-2{
+  font-family: $barlow-condensed;
+  font-size: 28px;
+  font-weight: 400;
+  color: $white;
+   span{
+    opacity: 0.25;
+  }
+}
+
+@mixin typo-nav-destination-links{
+  font-family: $barlow-condensed;
+  font-size: 16px;
+  color: $light-blue;
+  &.active {
+    color: white;
+  }
+  @include media-mobile{
+    font-size: 14px;
+  }
+}

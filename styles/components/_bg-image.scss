@@ -1,0 +1,33 @@
+@use '../mixins' as *;
+
+.root-bg-image {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+
+  &.desktop{
+    @include media-tablet{
+      display: none;
+    }
+  }
+
+  &.tablet{
+    display: none;
+    @include media-only-tablet{
+      display: unset;
+    }
+  }
+
+  &.mobile{
+    display: none;
+    @include media-mobile{
+      display: unset;
+    }
+  }
+}
