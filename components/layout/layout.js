@@ -7,6 +7,7 @@ export default function Layout({children}){
     <>
      <Head>        
         <title>Space Tourism</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="icon" type="image/png" href={path('/favicon-32x32.png')} />
       </Head>
       <Navbar/>

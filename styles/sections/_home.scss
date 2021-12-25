@@ -17,6 +17,10 @@
     padding-top: $navbar-desktop-height;
   }
 
+  @include media-mobile{
+    gap: 88px;
+  }
+
   > * {
     z-index: 1;
     position: relative;
@@ -68,6 +72,10 @@
       }
       grid-template-rows: 323px;
     }
+
+    @include media-mobile{
+      grid-template-rows: auto;
+    }
   }
 
   .text-container .text {
@@ -77,6 +85,10 @@
       @include size(447px, 323px);
     }
 
+    @include media-mobile{
+      width: 100%;
+      height: auto;
+    }
     .subtitle{
       @include typo-sub-heading-1;
       margin: 0px      
@@ -85,6 +97,15 @@
     .title{
       @include typo-heading-1;
       margin: 54px 0px 0px 0px;
+
+      .title{
+        margin-bottom: -30px;
+      }
+
+      @include media-mobile{
+        margin-top: 15px;
+        margin-bottom: 24px
+      }
     }
 
     .paragraph{
@@ -100,9 +121,7 @@
         text-align: center;
       }
 
-      .title{
-        margin-bottom: -30px;
-      }
+      
     }
   }
 
@@ -121,6 +140,10 @@
       grid-template-rows: 242px;
       justify-content: center;
     }
+
+    @include media-mobile{      
+      grid-template-rows: 150px;
+    }
   }
 
   .decoration .explore{
@@ -136,6 +159,9 @@
       @include size(242px, 242px);
     }
    
+    @include media-mobile{
+      @include size(150px, 150px)
+    }
    
     color: $dark-blue;
   }

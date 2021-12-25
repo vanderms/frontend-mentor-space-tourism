@@ -25,6 +25,13 @@
       grid-template-columns: auto auto;
       justify-content: space-between;
       @include container(true, true);
+      height: $navbar-mobile-height;
+    }
+  }
+
+  .logo img{
+    @include media-mobile{
+      @include size(40px, 40px);
     }
   }
 
@@ -36,6 +43,10 @@
     @include media-mobile{
       display: unset;
     }
+  }
+
+  &.open .btn-menu{
+    display: none;
   }
 
   .detail{
@@ -117,6 +128,57 @@
     
 
   .sidebar {
-    display: none;
+
+    display: none; 
+    
+    @include media-mobile {
+      display: block;
+      @include size(254px, 100vh);
+      @include container(false, true);
+      position: fixed;
+      top: 0px;
+      left: 100%;
+      background-color: #FFFFFF0A;
+      z-index: 101;      
+      backdrop-filter: blur(30px);
+      
+      @supports not (backdrop-filter: blur(30px)){
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .btn-close-bar {
+        @include size(100%, $navbar-mobile-height);
+        display: grid;
+        justify-content: end;
+        align-items: center;
+        margin-bottom: 65px;        
+      }
+
+      .btn-close{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+      }
+
+      .sidebar-links{
+        @include typo-navlinks;
+        @include ul-no-decoration;
+
+        padding-left: 32px;
+        display: grid;
+        grid-auto-flow: row;
+        gap: 32px;  
+      }
+    } 
   }
+
+  &.open .sidebar {
+    display: none;
+
+    @include media-mobile {
+      display: block;
+      left: calc(100% - 254px);
+      transition: left 0.2s;
+    }
+  }  
 }

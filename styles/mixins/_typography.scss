@@ -13,6 +13,11 @@ $belefair: 'Bellefair', serif;
   line-height: 172px;
   color: $white;
   font-weight: 400;
+
+  @include media-mobile{
+    font-size: 80px;
+    line-height: 100px;
+  }
 }
 
 @mixin typo-sub-heading-1{
@@ -36,6 +41,11 @@ $belefair: 'Bellefair', serif;
     font-size: 16px;
     line-height: 28px;
   }
+
+  @include media-mobile{
+    font-size: 15px;
+    line-height: 25px;
+  }
 }
 
 @mixin typo-navlinks{
@@ -52,5 +62,10 @@ $belefair: 'Bellefair', serif;
   @include media-tablet{
     font-size: 14px;
     letter-spacing: 2px;
+  }
+
+  @include media-mobile{
+    font-size: 16px;
+    letter-spacing: 2.7px;    
   }
 }

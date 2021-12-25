@@ -7,6 +7,7 @@ $sm: 350px;
 
 
 $navbar-desktop-height: 96px;
+$navbar-mobile-height: 88px;
 
 
 @mixin media($breakpoint){
@@ -56,6 +57,9 @@ $navbar-desktop-height: 96px;
   min-height:  640px;
   @include media-tablet{
     min-height: 1000px;
+  }
+  @include media-mobile{
+    min-height: 660px;
   }
 }
 
