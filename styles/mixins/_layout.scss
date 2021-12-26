@@ -109,6 +109,22 @@ $container-right-md: 6.4vw;
 }
 
 
+@mixin flex($direction, $justify, $align){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+
+@mixin flex-gap($row, $column){
+  >*:not(:first-child){
+    margin-left: $row;
+    margin-top: $column;
+  }
+}
+
+
 @mixin link-no-decoration{  
   text-decoration: none;
   color: inherit;
@@ -120,4 +136,7 @@ $container-right-md: 6.4vw;
   margin: 0;
   padding: 0;
 }
+
+
+
 
