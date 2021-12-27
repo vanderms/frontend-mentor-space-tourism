@@ -1,0 +1,25 @@
+@use '../mixins' as *;
+
+
+.root-page {
+  @include container;
+  width: 100%;
+  @include content-min-height;
+  min-height: 900px;  
+  padding-top: 214px;
+  padding-bottom: 58px;
+  position: relative;
+
+  @include media-tablet{
+    padding-top: 138px;
+  }
+
+  @include media-mobile{
+    padding-top: 90px;
+  }
+
+  >*{
+    position: relative;
+    z-index: 1;
+  }
+}

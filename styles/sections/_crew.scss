@@ -1,0 +1,53 @@
+@use '../mixins' as *;
+
+.root-crew .content{  
+  @include flex(row, space-between, flex-start);
+
+  .content-one{
+    margin-left: 112px;  
+    
+  }
+
+  .content-one .role{
+    margin-top: 96px;
+    opacity: 50%;
+    color: $white;
+    font: 32px $belefair;
+  }
+
+  .content-one .name{
+    margin-top: 19px;
+    color: $white;
+    font: 56px $belefair;
+  }
+
+  .content-one .bio{
+    @include typo-paragraph-1;
+    @include size(450px, 160px);
+    
+    margin-top: 15px;
+    p{
+      margin: 0px;
+    }
+  }
+
+  .content-one .navegation {
+    @include flex(row, flex-start, center);
+    @include flex-gap(24px, unset);
+    margin-top: 90px;
+  }
+
+  .content-one .navegation a{
+    display: inline-block;
+    @include size(15px, 15px);
+    background-color: white;
+    opacity: 0.17;
+    border-radius: 999px;
+    &.active{
+      opacity: 1;
+    }    
+  }
+
+  
+
+}

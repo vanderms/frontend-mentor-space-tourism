@@ -1,48 +1,6 @@
 @use '../mixins' as *;
 
 
-.root-destination{
-  @include container;
-  width: 100%;
-  @include content-min-height;
-  min-height: 900px;  
-  padding-top: 214px;
-  padding-bottom: 58px;
-  position: relative;
-
-  @include media-tablet{
-    padding-top: 138px;
-  }
-
-  @include media-mobile{
-    padding-top: 90px;
-  }
-  
-  header{
-    position: relative;
-    z-index: 1;
-  }
-
-  .heading-1{
-    @include typo-heading-2;
-    margin: 0px 0px 63px 112px;    
-    span{
-      margin-right: 30px;      
-    }
-    @include media-tablet{
-      margin: 0px 0px 58px 0px;  
-    }
-
-    @include media-mobile{
-      font-size: 16px;
-      text-align: center;
-      margin-bottom: 31px;
-      span{
-        margin-right: 19px;
-      }
-    }
-  }
-}
 
 .root-destination .destination{
   @include size(100%, 477px);

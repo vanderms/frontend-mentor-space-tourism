@@ -1,5 +1,5 @@
 import path from '../../lib/path';
-import Navegation from '../../components/navegation/navegation';
+import Navegation from '../../components/page-destination/navegation';
 import BgImage from '../../components/bg-image/bg-image';
 
 
@@ -23,15 +23,15 @@ export default function Destination({destination}){
  const destinationImage = destination.images.png.slice(1);
 
   return (
-    <section className="root-destination">
+    <section className="root-destination root-page">
       <BgImage
         desktop='/assets/destination/background-destination-desktop.jpg'
         tablet='/assets/destination/background-destination-tablet.jpg'
         mobile='/assets/destination/background-destination-mobile.jpg'      
       />
       
-      <header>
-        <h1 className="heading-1"><span>01</span> PICK YOUR DESTINATION</h1>
+      <header className='root-page-header'>
+        <h1><span>01</span> PICK YOUR DESTINATION</h1>
       </header>
 
       <section className="destination">
