@@ -22,6 +22,9 @@ export async function getStaticProps(context){
 
 
 export default function Crew({member}){
+
+  const memberImage = member.images.png.slice(1);
+
   return(
     <section className="root-crew root-page">
        <BgImage
@@ -42,14 +45,13 @@ export default function Crew({member}){
           <Navegation/>
         </div>
         
-        <div className="content-two">
-          
-
-
-        </div>
+    
 
 
       </section>
+      <div className="img-container">
+          <img src={memberImage} alt={member.name} />
+      </div>
 
     </section>
   )
