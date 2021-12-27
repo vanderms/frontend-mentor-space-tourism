@@ -38,21 +38,16 @@ export default function Crew({member}){
       <section className="content">
         <div className="content-one">
           <div className="role">{member.role.toUpperCase()}</div>
-          <div className="name">{member.name.toUpperCase()}</div>
+          <h2 className="name">{member.name.toUpperCase()}</h2>
           <div className="bio">
             <p className="paragraph">{member.bio}</p>
           </div>
           <Navegation/>
         </div>
-        
-    
-
-
       </section>
       <div className="img-container">
           <img src={memberImage} alt={member.name} />
       </div>
-
     </section>
   )
 }

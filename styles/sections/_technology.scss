@@ -1,0 +1,175 @@
+@use '../mixins' as *;
+
+
+.root-page.root-technology{
+  padding-right: 0px;
+
+  .root-page-header{
+    @include media-tablet{
+      @include container;
+    }
+  }
+
+  .root-page-header h1{
+    margin-bottom: 0px;    
+  }
+
+  @include media-tablet{
+    padding-left: 0px;
+  } 
+  
+}
+
+.root-technology .content{
+  @include flex(row, space-between, center);
+  @include flex-gap(20px, unset);
+  margin-left: 112px;
+  margin-top: 24px;
+  height: 527px;
+
+  @include media-tablet{
+    flex-direction: column-reverse;
+    @include flex-gap(unset, unset);
+    margin-left: 0px;
+    margin-top: 58px;
+    height: auto;
+  }
+
+  @include media-mobile{
+    margin-top: 31px;
+  }
+
+  .nav-and-description-wrapper{
+    @include flex(row, flex-start, flex-start);
+    @include flex-gap(80px, unset);
+
+    @include media-tablet{
+      flex-direction: column;
+      align-items: center;
+      @include flex-gap(unset, 45px);
+      margin-top: 45px;
+    }
+
+    @include media-mobile{
+      margin-top: 34px;
+    }
+  }
+
+  .navegation{
+    @include size(80px, 304px);
+    @include flex(column, space-between, center);
+
+    @include media-tablet{
+      flex-direction: row;
+      @include size(210px, 60px);
+    }
+
+    @include media-mobile{
+      @include size(152px, 40px);
+    }
+   
+  }
+
+  .navegation a{
+    @include size(80px, 80px);
+    font: 32px/90px $belefair;
+    border-radius: 999px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: $white;
+
+    &.active {
+      background-color: $white;
+      color: $dark-blue;
+      border: none;
+    }
+
+    @include media-tablet{
+      @include size(60px, 60px);
+      font-size: 24px;
+      line-height: 70px;
+    }
+
+    @include media-mobile{
+      @include size(40px, 40px);
+      font-size: 16px;
+      line-height: 42px;
+    }
+   
+  }
+
+
+  .text{
+    @include media-tablet{
+      text-align: center;
+    }
+  }
+
+  .terminology{
+    font: 400 16px $barlow-condensed;
+    color: $light-blue;
+
+    @include media-mobile{
+      font-size: 14px;
+    }
+  }
+
+  .name{
+    font: 400 56px $belefair;
+    margin: 21px 0px 0px 0px;
+    color: $white;  
+
+    @include media-tablet{
+      font-size: 40px;
+    }
+
+    @include media-mobile{
+      font-size: 24px;
+    }
+  }
+
+  .description{
+    @include typo-paragraph-1;
+    max-width: 444px;
+    margin-top: 5px;
+    p{
+      margin: 0px;
+    }
+
+    @include media-tablet{
+      max-width: 458px;
+    }
+
+    @include media-mobile{
+      @include container;
+    }
+    
+  }
+
+  .image-container .landscape{
+    display: none;
+    @include media-tablet{
+      display: block;
+    }
+  }
+
+  .image-container .portrait{
+   @include media-tablet{
+     display: none;
+   }
+  }
+
+  .image-container{
+    @include media-tablet{
+      width: 100%;
+    }
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+
+  
+
+}

@@ -96,6 +96,9 @@
       height: $navbar-desktop-height;
       @include flex-center;
       @include typo-navlinks;
+      a{
+        line-height: $navbar-desktop-height;
+      }
     }    
 
     @mixin navlink-decoration{

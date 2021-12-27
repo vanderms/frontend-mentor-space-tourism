@@ -19,7 +19,7 @@ export default function Navbar(){
           </a></Link>
         </div>
         <span className="detail"></span>
-        <NavLinks className='topbar-links' /> 
+        <NavLinks className='topbar-links' close={closeSidebar}/> 
         <button onClick={ openSidebar } className='btn-menu' aria-label="open side bar menu">
           <img src={path('/shared/icon-hamburger.svg')} alt="menu button" />
         </button>
@@ -31,7 +31,7 @@ export default function Navbar(){
             <img src={path('/shared/icon-close.svg')} alt="menu button" />
           </button>
         </div>       
-        <NavLinks className={'sidebar-links'} /> 
+        <NavLinks className={'sidebar-links'} close={closeSidebar}/> 
       </div>
     
     </nav>
